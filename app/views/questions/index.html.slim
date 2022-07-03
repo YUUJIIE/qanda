@@ -1,0 +1,15 @@
+h1 Questions
+table 
+    tr 
+        th ID
+        th Title
+        th Name
+        th Content 
+        th 
+    -@questions.each do |question|
+        tr 
+            td = question.id 
+            td = question.title
+            td = question.name
+            td = question.content
+            td = link_to 'show', question_path(question)
