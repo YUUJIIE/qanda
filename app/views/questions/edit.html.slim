@@ -1,4 +1,4 @@
-h1 New Question
+h1 Edit
 =form_with model: @question do |form|
     -if @question.errors.any?
         ul 
@@ -17,4 +17,4 @@ h1 New Question
     br
     =form.text_area :content
     br
-    =form.submit
+    =form.submit 

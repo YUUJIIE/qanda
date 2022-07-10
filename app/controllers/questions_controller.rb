@@ -1,10 +1,12 @@
 class QuestionsController < ApplicationController
     #質問一覧表示
     def index
+        @questions = Question.all
     end
 
     #質問詳細ページ表示
     def show
+        @question = Question.find(params[:id])
     end
 
     #質問の作成
@@ -17,9 +19,12 @@ class QuestionsController < ApplicationController
        #Qustionモデルを初期化
        @question = Question.new(question_params)
        #QuestionモデルをDBに保存
-       @question.save
-       #showへリダイレクト
-       redirect_to @question
+       if @question.save
+        #showへリダイレクト
+        redirect_to @question
+       else
+        render 'new', status: :unprocessable_entity
+       end
     end
 
     #質問の編集
@@ -28,6 +33,12 @@ class QuestionsController < ApplicationController
 
     #質問の更新
     def update
+        @question = Question.find(params[:id])
+        if @question.update(question_params)
+            redirect_to @question
+        else
+            render 'edit', status: :unprocessable_entity
+        end
     end
 
     #質問の削除
