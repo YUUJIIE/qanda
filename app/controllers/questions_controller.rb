@@ -29,6 +29,7 @@ class QuestionsController < ApplicationController
 
     #質問の編集
     def edit
+        @question = Question.find(params[:id])
     end
 
     #質問の更新
