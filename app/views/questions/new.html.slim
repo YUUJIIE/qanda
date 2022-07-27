@@ -1,20 +1,2 @@
 h1 New Question
-=form_with model: @question do |form|
-    -if @question.errors.any?
-        ul 
-            -@question.errors.full_messages.each do |message|
-                li = message
-
-    =form.label :title 
-    br
-    =form.text_field :title
-    br
-    =form.label :name 
-    br
-    =form.text_field :name
-    br
-    =form.label :content 
-    br
-    =form.text_area :content
-    br
-    =form.submit
+=render partial: 'form'
