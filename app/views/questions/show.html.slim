@@ -5,5 +5,17 @@ p Name:
 =@question.name
 p Content:
 =@question.content
+h2 Add a answer 
+=form_with model:  [@question, @question.answers.build] do |form|
+    div 
+        =form.label :name
+        br
+        =form.text_field :name
+    div 
+        =form.label :content
+        br
+        =form.text_area :content
+    div 
+        =form.submit
 p
 =link_to 'top', questions_path
