@@ -5,6 +5,12 @@ p Name:
 =@question.name
 p Content:
 =@question.content
+h2 Answers 
+-@question.answers.each do |answer|
+    p Name: 
+    =answer.name
+    p Content: 
+    =answer.content
 h2 Add a answer 
 =form_with model:  [@question, @question.answers.build] do |form|
     div 
