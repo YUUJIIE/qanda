@@ -11,6 +11,8 @@ h2 Answers
     =answer.name
     p Content: 
     =answer.content
+    p
+    =link_to 'Destroy Answer', [answer.question, answer], data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'} 
 h2 Add a answer 
 =form_with model:  [@question, @question.answers.build] do |form|
     div 
