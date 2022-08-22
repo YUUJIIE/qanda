@@ -72,10 +72,11 @@ group :test do
   gem "webdrivers"
 end
 
-group :production do
-  gem "pg", "~>1.2.3"
-end
+#group :production do
+ # gem "pg", "~>1.2.3"
+#end
 
 gem "slim-rails"
 gem "html2slim"
 
+gem 'devise'
