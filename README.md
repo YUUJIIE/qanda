@@ -1,21 +1,19 @@
 # README
 
-Rails7の学習用です。
-    記事投稿機能
-    記事更新機能
-    記事閲覧機能
-    コメント投稿機能（予定）
-    記事、コメント削除機能（予定）
+## Rails7の練習用アプリケーションです
+- 質問投稿機能
+- 質問更新機能
+- 質問閲覧機能
+- コメント投稿機能
+- 質問、コメント削除機能
 
-Ruby 3.0.2
-Rails 7.0.0
+## 実行環境
+- Ruby 3.0.2
+- Rails 7.0.0
 
-参考：
-はじめてのRuby on Rails入門-RubyとRailsを基礎から学びウェブアプリケーションをネットに公開しよう
-https://www.udemy.com/course/the-ultimate-ruby-on-rails-bootcamp/
+## 開発環境構築
+- git clone
+- bundle install
+- rails s
 
-現場で使える Ruby on Rails 5速習実践ガイド
-https://book.mynavi.jp/ec/products/detail/id=93905
-
-Ruby on Rails 5アプリケーションプログラミング
-https://gihyo.jp/book/2017/978-4-7741-8883-6
+少しずつ機能を追加していく予定です。
