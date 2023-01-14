@@ -16,4 +16,8 @@
     br
     =form.cktext_area :content
     br
+    .form-group 
+    = form.label :tag_list
+    = form.text_field :tag_list, value: @question.tag_list.join(','), class: "form-control"
+
     =form.submit class: "btn btn-success"

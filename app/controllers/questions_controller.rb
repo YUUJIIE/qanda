@@ -2,6 +2,9 @@ class QuestionsController < ApplicationController
     #質問一覧表示
     def index
         @questions = Question.all
+        if params[:tag_name]
+            @questions = Question.tagged_with("#{params[:tag_name]}")
+        end
     end
 
     #質問詳細ページ表示
@@ -51,7 +54,7 @@ class QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :name, :content)
+        params.require(:question).permit(:title, :name, :content, :tag_list)
     end
 
 end

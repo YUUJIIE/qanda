@@ -6,6 +6,7 @@ table
         th Title
         th Name
         th Content 
+        th Tag
         th 
     -@questions.each do |question|
         tr 
@@ -13,6 +14,7 @@ table
             td = question.title
             td = question.name
             td = question.content
-            td = link_to 'show', question_path(question) 
-            td = link_to 'edit', edit_question_path(question) 
-            td = link_to 'destroy', question_path(question), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}
+            td = render 'tag_list', tag_list: question.tag_list
+            td = link_to 'show', question_path(question), class: 'btn btn-primary mr-3'
+            td = link_to 'edit', edit_question_path(question), class: 'btn btn-primary mr-3'
+            td = link_to 'destroy', question_path(question), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger delete'
