@@ -1,23 +1,19 @@
 =form_with model: @question do |form|
     -if @question.errors.any?
-        ul 
+        ul
             -@question.errors.full_messages.each do |message|
                 li = message
-
-    =form.label :title 
-    br
-    =form.text_field :title
-    br
-    =form.label :name 
-    br
-    =form.text_field :name
-    br
-    =form.label :content 
-    br
-    =form.cktext_area :content
-    br
-    .form-group 
-    = form.label :tag_list
-    = form.text_field :tag_list, value: @question.tag_list.join(','), class: "form-control"
+    .form-group
+        =form.label :title, class: "form-label"
+        =form.text_field :title, class: "form-control"
+    .form-group
+        =form.label :name, class: "form-label"
+        =form.text_field :name, class: "form-control"
+    .form-group
+        =form.label :content, class: "form-label"
+        =form.cktext_area :content, class: "form-control"
+    .form-group
+        = form.label :tag_list, class: "form-label"
+        = form.text_field :tag_list, value: @question.tag_list.join(','), class: "form-control"
 
     =form.submit class: "btn btn-success"

@@ -5,6 +5,8 @@ p Name:
 =@question.name
 p Content:
 =@question.content
+p Tag:
+= render 'tag_list', tag_list: @question.tag_list
 h2 Answers
 -@question.answers.each do |answer|
     p Name:
@@ -12,18 +14,16 @@ h2 Answers
     p Content:
     =answer.content
     p
-    =link_to 'Destroy Answer', [answer.question, answer], data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'} 
+    =link_to 'Destroy Answer', [answer.question, answer], data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger delete'
 h2 Add a answer
 =form_with model:  [@question, @question.answers.build] do |form|
     div
-        =form.label :name
-        br
-        =form.text_field :name
+        =form.label :name, class: "form-label"
+        =form.text_field :name, class: "form-control"
     div
-        =form.label :content
-        br
-        =form.cktext_area :content
+        =form.label :content, class: "form-label"
+        =form.cktext_area :content, class: "form-control"
     div
-        =form.submit
+        =form.submit class: "btn btn-success"
 p
 =link_to 'top', questions_path
