@@ -1,29 +1,29 @@
-h1 Show
+h1 Show test
 p Title:
 =@question.title
-p Name: 
+p Name:
 =@question.name
 p Content:
 =@question.content
-h2 Answers 
+h2 Answers
 -@question.answers.each do |answer|
-    p Name: 
+    p Name:
     =answer.name
-    p Content: 
+    p Content:
     =answer.content
     p
     =link_to 'Destroy Answer', [answer.question, answer], data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'} 
-h2 Add a answer 
+h2 Add a answer
 =form_with model:  [@question, @question.answers.build] do |form|
-    div 
+    div
         =form.label :name
         br
         =form.text_field :name
-    div 
+    div
         =form.label :content
         br
-        =form.text_area :content
-    div 
+        =form.cktext_area :content
+    div
         =form.submit
 p
 =link_to 'top', questions_path

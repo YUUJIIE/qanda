@@ -80,3 +80,8 @@ gem "slim-rails"
 gem "html2slim"
 
 gem 'devise'
+
+gem 'ckeditor'
+gem 'rmagick'
+gem 'mini_magick'
+gem 'carrierwave'
