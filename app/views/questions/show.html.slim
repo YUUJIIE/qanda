@@ -7,6 +7,8 @@ p Content:
 =@question.content
 p Tag:
 = render 'tag_list', tag_list: @question.tag_list
+p Category:
+= render 'category_list', category_list: @question.category_list
 h2 Answers
 -@question.answers.each do |answer|
     p Name:

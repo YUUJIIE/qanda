@@ -4,6 +4,8 @@ class QuestionsController < ApplicationController
         @questions = Question.all
         if params[:tag_name]
             @questions = Question.tagged_with("#{params[:tag_name]}")
+        elsif params[:category_name]
+            @questions = Question.tagged_with("#{params[:category_name]}")
         end
     end
 
@@ -54,7 +56,7 @@ class QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :name, :content, :tag_list)
+        params.require(:question).permit(:title, :name, :content, :tag_list, :category_list)
     end
 
 end

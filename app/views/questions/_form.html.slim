@@ -15,5 +15,9 @@
     .form-group
         = form.label :tag_list, class: "form-label"
         = form.text_field :tag_list, value: @question.tag_list.join(','), class: "form-control"
+    .form-group
+        = form.label :category_list, class: "form-label"
+        / = form.text_field :caterory_list, value: @question.category_list.join(','), class: "form-control"
+        = form.collection_select :category_list, ActsAsTaggableOn::Tag.for_context(:categories), :name, :name,{ include_blank: "選択してください" }, class: "form-control"
 
     =form.submit class: "btn btn-success"
