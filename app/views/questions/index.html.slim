@@ -1,20 +1,21 @@
 h1 Questions
 =link_to 'new', new_question_path
-table 
-    tr 
+br
+table.table.table-striped.table-hover
+    tr
         th ID
         th Title
         th Name
-        th Content 
+        th Content
         th Tag
-        th 
+        th
+        th
     -@questions.each do |question|
-        tr 
-            td = question.id 
+        tr
+            td = question.id
             td = question.title
             td = question.name
-            td = question.content
+            td = link_to question.content, question_path(question)
             td = render 'tag_list', tag_list: question.tag_list
-            td = link_to 'show', question_path(question), class: 'btn btn-primary mr-3'
-            td = link_to 'edit', edit_question_path(question), class: 'btn btn-primary mr-3'
+            td = link_to 'edit', edit_question_path(question), class: 'btn btn-primary'
             td = link_to 'destroy', question_path(question), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger delete'
