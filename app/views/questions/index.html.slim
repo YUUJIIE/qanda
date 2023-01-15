@@ -8,6 +8,7 @@ table.table.table-striped.table-hover
         th Name
         th Content
         th Tag
+        th Category
         th
         th
     -@questions.each do |question|
@@ -17,5 +18,6 @@ table.table.table-striped.table-hover
             td = question.name
             td = link_to question.content, question_path(question)
             td = render 'tag_list', tag_list: question.tag_list
+            td = render 'category_list', category_list: question.category_list
             td = link_to 'edit', edit_question_path(question), class: 'btn btn-primary'
             td = link_to 'destroy', question_path(question), data: {turbo_method: 'delete', turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger delete'
