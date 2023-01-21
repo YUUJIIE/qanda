@@ -12,9 +12,9 @@
     .form-group
         =form.label :content, class: "form-label"
         =form.cktext_area :content, class: "form-control"
-    .form-group
-        = form.label :tag_list, class: "form-label"
-        = form.text_field :tag_list, value: @question.tag_list.join(','), class: "form-control"
+    / .form-group
+    /     = form.label :tag_list, class: "form-label"
+    /     = form.text_field :tag_list, value: @question.tag_list.join(','), class: "form-control"
     .form-group
         = form.label :category_list, class: "form-label"
         / = form.text_field :caterory_list, value: @question.category_list.join(','), class: "form-control"
