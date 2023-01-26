@@ -2,11 +2,12 @@ class QuestionsController < ApplicationController
     #質問一覧表示
     def index
         @questions = Question.all
-        if params[:tag_name]
-            @questions = Question.tagged_with("#{params[:tag_name]}")
-        elsif params[:category_name]
-            @questions = Question.tagged_with("#{params[:category_name]}")
-        end
+        # if params[:tag_name]
+        #     @questions = Question.tagged_with(params[:tag_name])
+        # elsif params[:category_name]
+        #     @questions = Question.tagged_with(params[:category_name])
+        # end
+        @questions = Question.tagged_with(params[:tag_name]) if params[:tag_name]
     end
 
     #質問詳細ページ表示

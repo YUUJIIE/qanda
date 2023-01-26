@@ -1,14 +1,17 @@
-h1 Show test
-p Title:
-=@question.title
-p Name:
-=@question.name
-p Content:
-=@question.content
-p Tag:
-= render 'tag_list', tag_list: @question.tag_list
-p Category:
-= render 'category_list', category_list: @question.category_list
+div.card
+    h1 Show
+    div.card-header
+        h4 =@question.title
+    / p Name:
+    / =@question.name
+    div.card-body
+        p.card-text
+            =simple_format(render_with_hashtags(@question.content))
+            / =simple_format(auto_link(@question.content))
+    / div.card-footer
+    /     = render 'tag_list', tag_list: @question.tag_list
+    / p Category:
+    / = render 'category_list', category_list: @question.category_list
 h2 Answers
 -@question.answers.each do |answer|
     p Name:
